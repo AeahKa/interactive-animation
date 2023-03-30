@@ -2,7 +2,7 @@
   <div>
     主页
   </div>
-  <div>
+  <div class="scenes">
     <scenes />
   </div>
 </template>
@@ -17,5 +17,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+div{
+  border: 2px solid purple;
+}
 </style>
