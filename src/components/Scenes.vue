@@ -24,6 +24,9 @@
   flex-direction: row;
   overflow: scroll;
   width: auto;
+  .scenes-wrapper::-webkit-scrollbar {
+  display: none;
+}
 
   .scenes-items{
     box-sizing: border-box;
@@ -36,5 +39,8 @@
       align-self: center;
     }
   }
+}
+.scenes-wrapper::-webkit-scrollbar {
+  display: none;
 }
 </style>
