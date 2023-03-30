@@ -17,7 +17,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-div{
-  // border: 2px solid purple;
-}
+
 </style>

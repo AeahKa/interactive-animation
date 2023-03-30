@@ -1,19 +1,25 @@
 <template>
-  <div class="scenes-wrapper">
-    <div class="scenes-items">
-      <img src="../assets/PS.png">
-    </div>
-    <div class="scenes-items">
-      <img src="../assets/XBox.png">
-    </div>
-    <div class="scenes-items">
-      <img src="../assets/Switch.png">
-    </div>
-  </div>
+  <swiper class="myswiper">
+    <swiper-slide class="item"><img src="../assets/PS.png"></swiper-slide>
+    <swiper-slide class="item"><img src="../assets/XBox.png"></swiper-slide>
+    <swiper-slide class="item"><img src="../assets/Switch.png"></swiper-slide>
+  </swiper>
 </template>
 
-<script>
+<script lang="js">
+// Import Swiper Vue.js components
+import { Swiper, SwiperSlide } from 'swiper/vue';
 
+// Import Swiper styles
+import 'swiper/scss';
+
+// Import Swiper styles
+export default {
+  components: {
+    Swiper,
+    SwiperSlide,
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -30,7 +36,7 @@
 
   .scenes-items{
     box-sizing: border-box;
-    // border: 1px solid black;
+    border: 1px solid black;
     min-width: 100vw;
     text-align: center;
 
@@ -42,5 +48,15 @@
 }
 .scenes-wrapper::-webkit-scrollbar {
   display: none;
+}
+
+.swiper {
+  width: 100vw;
+  .item{
+    text-align: center;
+    img{
+      height: 144px;
+    }
+  }
 }
 </style>

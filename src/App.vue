@@ -1,8 +1,7 @@
 <template>
   <RouterView />
 </template>
-
-<script>
+<script lang="js">
 
 export default {
 
