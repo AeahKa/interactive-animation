@@ -23,17 +23,17 @@
   display: flex;
   flex-direction: row;
   overflow: scroll;
-  
+  width: auto;
+
   .scenes-items{
     box-sizing: border-box;
-    border: 1px solid black;
-    width: 100%;
-    display: flex;
+    // border: 1px solid black;
+    min-width: 100vw;
     text-align: center;
 
     img{
-      width: 200px;
-      align-self:center
+      height: 144px;
+      align-self: center;
     }
   }
 }

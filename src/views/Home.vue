@@ -18,6 +18,6 @@ export default {
 
 <style lang="scss" scoped>
 div{
-  border: 2px solid purple;
+  // border: 2px solid purple;
 }
 </style>
