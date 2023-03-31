@@ -16,8 +16,10 @@ export default {
   },
   methods: {
     play(name) {
-      const audio = new Audio(`src/assets/audio/${name}.mp3`)
-      audio.play()
+      import(`../assets/audio/${name}.mp3`).then(url => {
+        const audio = new Audio(url.default);
+        audio.play();
+      });
     }
   }
 };
