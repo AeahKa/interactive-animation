@@ -1,8 +1,8 @@
 <template>
   <swiper class="myswiper">
-    <swiper-slide class="item"><img src="../assets/PS.png"></swiper-slide>
-    <swiper-slide class="item"><img src="../assets/XBox.png"></swiper-slide>
-    <swiper-slide class="item"><img src="../assets/Switch.png"></swiper-slide>
+    <swiper-slide class="item"><img @click="play('PS')" src="../assets/PS.png"></swiper-slide>
+    <swiper-slide class="item"><img @click="play('XBox')" src="../assets/XBox.png"></swiper-slide>
+    <swiper-slide class="item"><img @click="play('Switch')" src="../assets/Switch.png"></swiper-slide>
   </swiper>
 </template>
 
@@ -18,6 +18,12 @@ export default {
   components: {
     Swiper,
     SwiperSlide,
+  },
+  methods: {
+    play(name) {
+      const audio = new Audio(`src/assets/audio/${name}.mp3`)
+      audio.play()
+    }
   }
 };
 </script>
