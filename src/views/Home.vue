@@ -1,7 +1,4 @@
 <template>
-  <div>
-    主页
-  </div>
   <div class="scenes">
     <scenes />
   </div>
@@ -17,5 +14,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.scenes{
+  margin-top: 25vh;
+}
 </style>
