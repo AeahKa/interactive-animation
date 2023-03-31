@@ -15,7 +15,6 @@ export default {
     SwiperSlide,
   },
   mounted() {
-    // 在组件加载后加载音频
     this.loadAudio();
   },
   methods: {
@@ -31,19 +30,10 @@ export default {
       this.nsAudio = new Audio(ns.default);
     },
     play(name) {
-      switch (name)
+      const audio = this[name + 'Audio'];
+      if (audio)
       {
-        case 'ps':
-          this.psAudio.play();
-          break;
-        case 'xbox':
-          this.xboxAudio.play();
-          break;
-        case 'ns':
-          this.nsAudio.play();
-          break;
-        default:
-          break;
+        audio.play();
       }
     },
   }
