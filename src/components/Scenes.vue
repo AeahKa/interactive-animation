@@ -1,8 +1,8 @@
 <template>
   <swiper class="myswiper">
-    <swiper-slide class="item"><img @click="play('PS')" src="../assets/PS.png"></swiper-slide>
-    <swiper-slide class="item"><img @click="play('XBox')" src="../assets/XBox.png"></swiper-slide>
-    <swiper-slide class="item"><img @click="play('Switch')" src="../assets/Switch.png"></swiper-slide>
+    <swiper-slide class="item"><img @click="play('ps')" src="../assets/ps.png"></swiper-slide>
+    <swiper-slide class="item"><img @click="play('xbox')" src="../assets/xbox.png"></swiper-slide>
+    <swiper-slide class="item"><img @click="play('ns')" src="../assets/ns.png"></swiper-slide>
   </swiper>
 </template>
 
@@ -14,13 +14,38 @@ export default {
     Swiper,
     SwiperSlide,
   },
+  mounted() {
+    // 在组件加载后加载音频
+    this.loadAudio();
+  },
   methods: {
+    async loadAudio() {
+      const [ps, xbox, ns] = await Promise.all([
+        import(`../assets/audio/ps.mp3`),
+        import(`../assets/audio/xbox.mp3`),
+        import(`../assets/audio/ns.mp3`),
+      ]);
+
+      this.psAudio = new Audio(ps.default);
+      this.xboxAudio = new Audio(xbox.default);
+      this.nsAudio = new Audio(ns.default);
+    },
     play(name) {
-      import(`../assets/audio/${name}.mp3`).then(url => {
-        const audio = new Audio(url.default);
-        audio.play();
-      });
-    }
+      switch (name)
+      {
+        case 'ps':
+          this.psAudio.play();
+          break;
+        case 'xbox':
+          this.xboxAudio.play();
+          break;
+        case 'ns':
+          this.nsAudio.play();
+          break;
+        default:
+          break;
+      }
+    },
   }
 };
 </script>
