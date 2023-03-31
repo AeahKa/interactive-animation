@@ -7,13 +7,8 @@
 </template>
 
 <script lang="js">
-// Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from 'swiper/vue';
 
-// Import Swiper styles
-import 'swiper/scss';
-
-// Import Swiper styles
 export default {
   components: {
     Swiper,
