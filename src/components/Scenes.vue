@@ -30,7 +30,6 @@ export default {
         import(`../assets/audio/ns.mp3`),
         import(`../assets/audio/puppet.mp3`),
       ]);
-
       this.psAudio = new Audio(ps.default);
       this.xboxAudio = new Audio(xbox.default);
       this.nsAudio = new Audio(ns.default);
@@ -49,7 +48,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .myswiper { 
   height: 300px;
   .item{
