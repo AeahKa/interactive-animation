@@ -1,5 +1,8 @@
 <template>
   <swiper class="myswiper">
+    <swiper-slide class="item">
+      <puppet class="puppet" />
+    </swiper-slide>
     <swiper-slide class="item"><img @click="play('ps')" src="../assets/ps.png"></swiper-slide>
     <swiper-slide class="item"><img @click="play('xbox')" src="../assets/xbox.png"></swiper-slide>
     <swiper-slide class="item"><img @click="play('ns')" src="../assets/ns.png"></swiper-slide>
@@ -8,11 +11,12 @@
 
 <script lang="js">
 import { Swiper, SwiperSlide } from 'swiper/vue';
-
+import Puppet from './Puppet.vue';
 export default {
   components: {
     Swiper,
     SwiperSlide,
+    Puppet
   },
   mounted() {
     this.loadAudio();
@@ -43,10 +47,15 @@ export default {
 <style lang="scss" scoped>
 
 .myswiper { 
+  height: auto;
+  overflow: visible;
   .item{
     text-align: center;
     img{
       height: 120px;
+    }
+    .puppet{
+      border: 1px solid 1px;
     }
   }
 }
