@@ -5,7 +5,7 @@
     <swiper-slide class="item"><img @click="play('xbox')" src="../assets/xbox.png"></swiper-slide>
     <swiper-slide class="item"><img @click="play('ns')" src="../assets/ns.png"></swiper-slide>
     <swiper-slide class="item">
-      <puppet class="puppet" />
+      <puppet @click="play('puppet')" />
     </swiper-slide>
   </swiper>
 </template>
@@ -24,17 +24,20 @@ export default {
   },
   methods: {
     async loadAudio() {
-      const [ps, xbox, ns] = await Promise.all([
+      const [ps, xbox, ns, puppet] = await Promise.all([
         import(`../assets/audio/ps.mp3`),
         import(`../assets/audio/xbox.mp3`),
         import(`../assets/audio/ns.mp3`),
+        import(`../assets/audio/puppet.mp3`),
       ]);
 
       this.psAudio = new Audio(ps.default);
       this.xboxAudio = new Audio(xbox.default);
       this.nsAudio = new Audio(ns.default);
+      this.puppetAudio = new Audio(puppet.default);
     },
     play(name) {
+      console.log('点了');
       const audio = this[name + 'Audio'];
       if (audio)
       {
@@ -56,6 +59,7 @@ export default {
       margin-top: 90px;
     }
     .puppet{
+      width: 100px;
       border: 1px solid 1px;
     }
   }
