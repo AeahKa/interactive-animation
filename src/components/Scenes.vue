@@ -47,8 +47,7 @@ export default {
 <style lang="scss" scoped>
 
 .myswiper { 
-  height: auto;
-  overflow: visible;
+  height: 200px;
   .item{
     text-align: center;
     img{
