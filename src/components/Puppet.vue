@@ -26,7 +26,7 @@ export default {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 60px;
+  top: 65px;
   .puppet-head{
     background-color: #e1b382;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
@@ -36,7 +36,7 @@ export default {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    animation: jump-head 1s infinite;
+    animation: jump-head 1.2s infinite;
   }
   .puppet-body{
     background-color: #e1b382;
@@ -47,7 +47,7 @@ export default {
     position: absolute;
     left: 50%;
     transform: translateX(-50%) translateY(36px);
-    animation: jump-body 1s infinite;
+    animation: jump-body 1.2s infinite;
   }
   .puppet-arm{
     width: 68px;
@@ -66,14 +66,14 @@ export default {
     .puppet-arm-left{
       transform:rotate(18deg);
       transform-origin: top left;
-      animation: jump-arm-left 1s infinite;
+      animation: jump-arm-left 1.2s infinite;
     }
     .puppet-arm-right{
       transform: rotate(-18deg);
       transform-origin: top right;
       position: absolute;
       right: 0;
-      animation: jump-arm-right 1s infinite;
+      animation: jump-arm-right 1.2s infinite;
     }
   }
   .puppet-leg{
@@ -91,11 +91,13 @@ export default {
       position: absolute;
     }
     .puppet-leg-left{
-      animation: jump-leg-left 1s infinite;
+      transform-origin: top left;
+      animation: jump-leg-left 1.2s infinite;
     }
     .puppet-leg-right{
       right: 0;
-      animation: jump-leg-right 1s infinite;
+      transform-origin: top right;
+      animation: jump-leg-right 1.2s infinite;
     }
   }
   .ground{
@@ -112,23 +114,23 @@ export default {
 
 @keyframes jump-arm-right{
   0%{transform: rotate(-18deg);top:0}
-  20%{transform: rotate(-24deg);top:20px}
-  30%{transform: rotate(-24deg);top:0}
-  80%{transform: rotate(0);top: -60px;}
+  20%{transform: rotate(-48deg);top:20px}
+  30%{top:0}
+  80%{transform: rotate(-10deg);top: -15px;}
   100%{top:0}
 }
 @keyframes jump-arm-left{
   0%{transform: rotate(18deg);top:0}
-  20%{transform: rotate(24deg);top:20px}
-  30%{transform: rotate(24deg);top:0}
-  80%{transform: rotate(0);top: -60px;}
+  20%{transform: rotate(48deg);top:20px}
+  30%{top:0}
+  80%{transform: rotate(10deg);top: -15px;}
   100%{top:0}
 }
 @keyframes jump-body {
   0%{top:0}
   20%{top:20px}
   30%{top:0}
-  80%{top: -60px;}
+  80%{top: -15px;}
   100%{top:0}
 }
 @keyframes jump-head {
@@ -141,19 +143,19 @@ export default {
 @keyframes jump-leg-left{
   0%{top:0}
   20%{top:20px}
-  80%{top: -60px;}
+  80%{top: -15px;}
   100%{top:0}
 }
 @keyframes jump-leg-left{
   0%{top:0;}
-  30%{top:0; }
-  80%{top: -60px;}
+  30%{top:0; transform: rotate(0deg);}
+  80%{top: -15px;}
   100%{top:0}
 }
 @keyframes jump-leg-right{
   0%{top:0;}
-  30%{top:0;}
-  80%{top: -60px;}
+  30%{top:0;transform: rotate(0deg);}
+  80%{top: -15px;}
   100%{top:0}
 }
 </style>

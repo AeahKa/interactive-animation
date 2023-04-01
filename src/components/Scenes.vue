@@ -1,11 +1,12 @@
 <template>
   <swiper class="myswiper">
-    <swiper-slide class="item">
-      <puppet class="puppet" />
-    </swiper-slide>
+
     <swiper-slide class="item"><img @click="play('ps')" src="../assets/ps.png"></swiper-slide>
     <swiper-slide class="item"><img @click="play('xbox')" src="../assets/xbox.png"></swiper-slide>
     <swiper-slide class="item"><img @click="play('ns')" src="../assets/ns.png"></swiper-slide>
+    <swiper-slide class="item">
+      <puppet class="puppet" />
+    </swiper-slide>
   </swiper>
 </template>
 
@@ -52,6 +53,7 @@ export default {
     text-align: center;
     img{
       height: 120px;
+      margin-top: 90px;
     }
     .puppet{
       border: 1px solid 1px;
