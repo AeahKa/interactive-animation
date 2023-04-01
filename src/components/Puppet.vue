@@ -10,6 +10,7 @@
       <div class="puppet-leg-left"></div>
       <div class="puppet-leg-right"></div>
     </div>
+    <div class="ground"></div>
   </div>
 </template>
 
@@ -25,8 +26,7 @@ export default {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  animation: jump 1s infinite;
-  // top: 30px;
+  top: 60px;
   .puppet-head{
     background-color: #e1b382;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
@@ -82,7 +82,6 @@ export default {
     left: 50%;
     transform: translateX(-50%);
     top: 104px;
-    // z-index: -1;
     .puppet-leg-left,.puppet-leg-right{
       width: 10px;
       height: 80px;
@@ -91,38 +90,70 @@ export default {
       border-radius: 10px;
       position: absolute;
     }
-    .puppet-leg-left{}
+    .puppet-leg-left{
+      animation: jump-leg-left 1s infinite;
+    }
     .puppet-leg-right{
       right: 0;
+      animation: jump-leg-right 1s infinite;
     }
   }
+  .ground{
+    width: 200px;
+    position: absolute;
+    border: 1px #d9d9d9 solid;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+
+    left: 50%;
+    transform: translateX(-50%);
+    top: 184px;
+  }
 }
-@keyframes jump {
-  0%{top:0}
-  40%{top:0}
-  70%{top:-40px}
+
+@keyframes jump-arm-right{
+  0%{transform: rotate(-18deg);top:0}
+  20%{transform: rotate(-24deg);top:20px}
+  30%{transform: rotate(-24deg);top:0}
+  80%{transform: rotate(0);top: -60px;}
   100%{top:0}
 }
-@keyframes jump-arm-right{
-  0%{transform: rotate(-18deg);top: 0;}
-  40%{top: 20px;}
-  70%{transform: rotate(0);}
-  100%{transform: rotate(-18deg);top: 0;}
-}
 @keyframes jump-arm-left{
-  0%{transform: rotate(18deg);top: 0;}
-  40%{top: 20px;}
-  70%{transform: rotate(0);}
-  100%{transform: rotate(18deg);top: 0;}
+  0%{transform: rotate(18deg);top:0}
+  20%{transform: rotate(24deg);top:20px}
+  30%{transform: rotate(24deg);top:0}
+  80%{transform: rotate(0);top: -60px;}
+  100%{top:0}
 }
 @keyframes jump-body {
   0%{top:0}
-  40%{top:20px}
+  20%{top:20px}
+  30%{top:0}
+  80%{top: -60px;}
   100%{top:0}
 }
 @keyframes jump-head {
   0%{top:0}
-  40%{top:20px}
+  20%{top:20px}
+  30%{top:0}
+  80%{top: -60px;}
+  100%{top:0}
+}
+@keyframes jump-leg-left{
+  0%{top:0}
+  20%{top:20px}
+  80%{top: -60px;}
+  100%{top:0}
+}
+@keyframes jump-leg-left{
+  0%{top:0;}
+  30%{top:0; }
+  80%{top: -60px;}
+  100%{top:0}
+}
+@keyframes jump-leg-right{
+  0%{top:0;}
+  30%{top:0;}
+  80%{top: -60px;}
   100%{top:0}
 }
 </style>
