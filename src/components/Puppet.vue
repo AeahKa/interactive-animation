@@ -10,7 +10,6 @@
       <div class="puppet-leg-left"></div>
       <div class="puppet-leg-right"></div>
     </div>
-
   </div>
 </template>
 
@@ -26,6 +25,7 @@ export default {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  animation: jump 1s infinite;
   // top: 30px;
   .puppet-head{
     background-color: #e1b382;
@@ -36,6 +36,7 @@ export default {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    animation: jump-head 1s infinite;
   }
   .puppet-body{
     background-color: #e1b382;
@@ -46,6 +47,7 @@ export default {
     position: absolute;
     left: 50%;
     transform: translateX(-50%) translateY(36px);
+    animation: jump-body 1s infinite;
   }
   .puppet-arm{
     width: 68px;
@@ -64,12 +66,14 @@ export default {
     .puppet-arm-left{
       transform:rotate(18deg);
       transform-origin: top left;
+      animation: jump-arm-left 1s infinite;
     }
     .puppet-arm-right{
       transform: rotate(-18deg);
       transform-origin: top right;
       position: absolute;
       right: 0;
+      animation: jump-arm-right 1s infinite;
     }
   }
   .puppet-leg{
@@ -78,6 +82,7 @@ export default {
     left: 50%;
     transform: translateX(-50%);
     top: 104px;
+    // z-index: -1;
     .puppet-leg-left,.puppet-leg-right{
       width: 10px;
       height: 80px;
@@ -91,5 +96,33 @@ export default {
       right: 0;
     }
   }
+}
+@keyframes jump {
+  0%{top:0}
+  40%{top:0}
+  70%{top:-40px}
+  100%{top:0}
+}
+@keyframes jump-arm-right{
+  0%{transform: rotate(-18deg);top: 0;}
+  40%{top: 20px;}
+  70%{transform: rotate(0);}
+  100%{transform: rotate(-18deg);top: 0;}
+}
+@keyframes jump-arm-left{
+  0%{transform: rotate(18deg);top: 0;}
+  40%{top: 20px;}
+  70%{transform: rotate(0);}
+  100%{transform: rotate(18deg);top: 0;}
+}
+@keyframes jump-body {
+  0%{top:0}
+  40%{top:20px}
+  100%{top:0}
+}
+@keyframes jump-head {
+  0%{top:0}
+  40%{top:20px}
+  100%{top:0}
 }
 </style>
